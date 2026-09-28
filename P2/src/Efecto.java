@@ -21,4 +21,7 @@ public class Efecto {
     public void setJugador(String jugador) {
         this.jugador = jugador;
     }
+    public String toString(){
+        return "Jugador: " + jugador + " tipo de carta " + getCarta();
+    }
 }
