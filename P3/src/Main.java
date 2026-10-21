@@ -24,14 +24,10 @@ public class Main implements IDATOS{
                     fallo = false;
                     break;
                 case "no":
-                    System.out.println("Introduzca el numero de lotes: ");
-                    numeroLotes = numeroCorrecto();
-                    System.out.println("Introduzca el numero de standard: ");
-                    numeroStandard = numeroCorrecto();
-                    System.out.println("Introduzca el numero de fast pass:  ");
-                    numeroFastPass = numeroCorrecto();
-                    System.out.println("Introduzca el tiempo entre cada lote");
-                    tiempoEntreLote = numeroCorrecto();
+                    numeroLotes = introducirValor("Introduzca el numero de lotes: ");
+                    numeroStandard = introducirValor("Introduzca el numero de standard: ");
+                    numeroFastPass = introducirValor("Introduzca el numero de fast pass:  ");
+                    tiempoEntreLote = introducirValor("Introduzca el tiempo entre cada lote");
                     System.out.println((atraccion.simular(numeroLotes, numeroStandard, numeroFastPass, tiempoEntreLote)));
                     fallo = false;
                     break;
@@ -45,23 +41,31 @@ public class Main implements IDATOS{
             }
         }while(fallo);
     }
+    public static int introducirValor(String mensaje){
+        System.out.println(mensaje);
+        int valor = numeroCorrecto();
+        return valor;
+    }
     public static int numeroCorrecto(){
         boolean fallo = true;
         int numero = 0;
         do {
             try {
                 numero = sc.nextInt();
+                
+                if(numero<0){
+                System.out.println("El numero debe ser positivo");
+                fallo = true;
+            }else{
                 fallo = false;
+            }
             } catch (InputMismatchException e) {
                 System.out.println("Error. Introduzca un entero positivo");
                 fallo = true;
                 sc.nextLine();
 
             }
-            if(numero<0){
-                System.out.println("El numero debe ser positivo");
-                fallo = true;
-            }
+            
         }while(fallo);
         return numero;
     }
