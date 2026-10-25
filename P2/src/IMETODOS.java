@@ -1,10 +1,10 @@
 import java.util.Stack;
 
 public interface IMETODOS{
-    String ACCION1 = "robar";
-    String ACCION2 = "jugar";
-    String ACCION3 = "descartar";
-    String ACCION4 = "resolver";
+    String ACCION1_ROBAR = "robar";
+    String ACCION2_JUGAR = "jugar";
+    String ACCION3_DESCARTAR = "descartar";
+    String ACCION4_RESOLVER = "resolver";
 
     public default void llenarMazo(Stack mazoRobo){
         Carta[] cartas = Carta.values();

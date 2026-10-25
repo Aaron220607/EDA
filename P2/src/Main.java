@@ -19,22 +19,22 @@ public class Main implements IMETODOS{
         System.out.println(jugada.toString());
         String accion = jugada.getAccion().toLowerCase();
         switch (accion){
-            case ACCION1:
+            case ACCION1_ROBAR:
                 try {
                     motorJuego.robar();
                 }catch (MazosVaciosException e){
                     System.out.println(e.getMessage());
                 }
                 break;
-            case ACCION2:
+            case ACCION2_JUGAR:
                 Carta cartaJugada = Carta.valueOf(jugada.getNombreCarta());
                 motorJuego.jugar(jugada.getJugador(),cartaJugada);
                 break;
-            case ACCION3:
+            case ACCION3_DESCARTAR:
                 Carta cartaDescartada = Carta.valueOf(jugada.getNombreCarta());
                 motorJuego.descartar(cartaDescartada);
                 break;
-            case ACCION4:
+            case ACCION4_RESOLVER:
                 System.out.println(motorJuego.resolver());
                 break;
             default:
