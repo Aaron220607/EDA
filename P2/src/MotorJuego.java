@@ -48,5 +48,18 @@ public class MotorJuego implements IMETODOS{
         return estado;
 
     }
+    private  void llenarMazo(Stack<Carta> mazoRobo){
+        Carta[] cartas = Carta.values();
+        for(int i=0;i<cartas.length;i++){
+            mazoRobo.push(cartas[i]);
+        }
+
+    }
+    private  void reciclaje(Stack<Carta> mazoRobo,Stack<Carta> mazoDescartes){
+        while(!mazoDescartes.isEmpty()){
+            Carta cambio =  mazoDescartes.pop();
+            mazoRobo.push(cambio);
+        }
+    }
 
 }

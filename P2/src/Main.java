@@ -27,12 +27,20 @@ public class Main implements IMETODOS{
                 }
                 break;
             case ACCION2_JUGAR:
-                Carta cartaJugada = Carta.valueOf(jugada.getNombreCarta());
+                try{
+                Carta cartaJugada = Carta.valueOf(jugada.getNombreCarta().toUpperCase());
                 motorJuego.jugar(jugada.getJugador(),cartaJugada);
+                }catch (IllegalArgumentException e){
+                        System.out.println("La carta: " + jugada.getNombreCarta() + " no es válida");
+                    }
                 break;
             case ACCION3_DESCARTAR:
-                Carta cartaDescartada = Carta.valueOf(jugada.getNombreCarta());
-                motorJuego.descartar(cartaDescartada);
+                try {
+                    Carta cartaDescartada = Carta.valueOf(jugada.getNombreCarta().toUpperCase());
+                    motorJuego.descartar(cartaDescartada);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("La carta: " + jugada.getNombreCarta() + " no es válida");
+                }
                 break;
             case ACCION4_RESOLVER:
                 System.out.println(motorJuego.resolver());
