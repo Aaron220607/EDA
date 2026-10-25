@@ -1,5 +1,4 @@
 import utils.SequentialFileReadable;
-
 /**
  * Clase que representa a un candidato individual de una lista electoral.
  * 

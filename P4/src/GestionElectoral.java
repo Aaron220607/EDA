@@ -116,8 +116,10 @@ public class GestionElectoral {
             for (ListaElectoral l : listasAlertas) {
                 System.out.println(" El partido: " + l.getPartido() + " Con circuncripcion en " + l.getCircunscripcion());
                 System.out.println(" No cumple la paridad... pues sus candidatos son ");
-                System.out.println(l.getPorcentajeHombres() + "% de hombres ");
-                System.out.println(l.getPorcentajeMujeres() + "% de mujeres ");
+                System.out.printf("%.2f", l.getPorcentajeHombres());
+                System.out.println("% de hombres ");
+                System.out.printf("%.2f", l.getPorcentajeMujeres());
+                System.out.println("% de mujeres ");
             }
     }else {
             System.out.println("Todos los partidos cumplen la paridad");
