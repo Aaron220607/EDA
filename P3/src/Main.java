@@ -6,6 +6,7 @@ public class Main implements IDATOS{
     public static void main(String[] args){
         Atraccion atraccion = new Atraccion();
         elegirValores(atraccion);
+        System.out.println("El visitante que mas espero fue: ");
         System.out.println(atraccion.getVisitanteMasEspera() + " espero durante: "+atraccion.getHoraMaxima());
     }
     public static void elegirValores(Atraccion atraccion){
@@ -33,8 +34,6 @@ public class Main implements IDATOS{
                     break;
                 default:
                     System.out.println("Introduzca si o no ");
-                    sc.nextLine();
-                    fallo = false;
                     break;
 
 

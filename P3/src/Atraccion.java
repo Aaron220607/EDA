@@ -1,5 +1,4 @@
-import java.util.Queue;
-import java.util.LinkedList;
+
 import java.util.PriorityQueue;
 public class Atraccion implements IDATOS{
     private PriorityQueue<Asistente> colaAtraccion;
@@ -12,7 +11,7 @@ public class Atraccion implements IDATOS{
         this.colaAtraccion = new PriorityQueue<Asistente>();
         this.tiempo=0;
         this.visitanteMasEspera = "";
-        this.horaMaxima=0;
+        this.horaMaxima=-1;
         this.informacion="";
     }
     void generarVisitantes(int N, int E, int F, int L) {
@@ -36,6 +35,7 @@ public class Atraccion implements IDATOS{
                 Asistente fuera = colaAtraccion.poll();
                 int esperaAsistente = (tiempo - fuera.getHoraLlegada());
                 setInformacion(fuera.toString());
+                setInformacion("\n");
                 if (horaMaxima < esperaAsistente) {
                     visitanteMasEspera = fuera.toString();
                     horaMaxima = esperaAsistente;

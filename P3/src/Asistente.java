@@ -1,5 +1,5 @@
 public class Asistente implements Comparable <Asistente>{
-    public static int contador = 0;
+    private static int contador = 0;
     private  int id;
     private Pase pase;
     private int horaLlegada;
