@@ -21,6 +21,13 @@ public class ListaElectoral {
         this.candidatos = new ArrayList<>();
     }
 
+/*********************************************************************
+* Method name:agregarCandidato
+*
+* Description of the Method: permite añadir un candidato mediante el add de listas
+* Calling arguments:Candidato candidato
+*********************************************************************/
+
     public void agregarCandidato(Candidato candidato) {
         candidatos.add(candidato);
     }
@@ -84,7 +91,12 @@ public class ListaElectoral {
     public void setVotosPartido(int votosPartido) {
         this.votosPartido = votosPartido;
     }
-
+/*********************************************************************
+* Method name:cumpleParidad
+*
+* Description of the Method: comprueba que los porcentajes de hombres y mujeres estan entre el 40% y el 60%
+* Calling arguments:void
+*********************************************************************/
     public boolean cumpleParidad() {
         boolean paridad = false;
         double  mujeresPorcentaje = getPorcentajeMujeres();
@@ -95,11 +107,26 @@ public class ListaElectoral {
         return paridad;
     }
 
+/*********************************************************************
+* Method name:calcularEscanos
+*
+* Description of the Method: calcula los escaños de cada partido
+* Calling arguments:void
+*********************************************************************/
+    
     public int calcularEscanos() {
         int escaños = (getVotosPartido()/VOTOS_ESCANO);
         return escaños;
     }
 
+/*********************************************************************
+* Method name:getCandidatosElectos
+*
+* Description of the Method: crea una lista de candidatos electos recorriendola en funcion
+* de los escaños obtenidos y del tamaño de la lista de candidatos añadiendo a la lista los electos por orden de indice
+* Calling arguments:void
+*********************************************************************/
+    
     public List<Candidato> getCandidatosElectos() {
         List<Candidato> candidatosElectos = new ArrayList<>();  //lista de candidatos electos
         int k = calcularEscanos();
