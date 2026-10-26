@@ -8,6 +8,14 @@ public class Asistente implements Comparable <Asistente>{
     private  int id;                    //id de los asistentes
     private Pase pase;                  //pase del asistente
     private int horaLlegada;            //hora de entrada a la cola
+
+
+/*********************************************************************
+* Method name:Asistente
+*
+* Description of the Method: constructor de los asistentes
+* Calling arguments:Pase pase, int horaLlegada
+*********************************************************************/  
     public Asistente(Pase pase, int horaLlegada){
         contador++;
         this.id = contador;
@@ -28,6 +36,17 @@ public class Asistente implements Comparable <Asistente>{
         return " Asistente con id: "+ id + " tipo de pase: " + pase
                 + " hora de llegada - " + horaLlegada;
     }
+
+/*********************************************************************
+* Method name:compareTo
+*
+* Description of the Method: metodo que nos pide implementar la interfaz de comparable,
+* en el cual crearemos la logica de la prioridad de nuestra clase
+* en esta practica compararemos por tipo de pase,tiempo o id devolveremos positivo si el objeto actual es prioritario
+* al objeto dado por argumento, negativo en caso contrareo y 0 si son iguales
+* Calling arguments:Asistente otro
+*********************************************************************/  
+
     public  int compareTo (Asistente otro){
         int comparacion;                                        //comparador de prioridad
     int porPase = this.pase.compareTo(otro.getPase());          //comparadod de tipo de pase
