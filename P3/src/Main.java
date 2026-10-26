@@ -8,17 +8,17 @@ import java.util.*;
 public class Main implements IDATOS{
     final static Scanner sc = new Scanner(System.in);
     public static void main(String[] args){
-        Atraccion atraccion = new Atraccion();
+        Atraccion atraccion = new Atraccion();      //la atraccion a simular
         elegirValores(atraccion);
         System.out.println("El visitante que mas espero fue: ");
         System.out.println(atraccion.getVisitanteMasEspera() + " espero durante: "+atraccion.getHoraMaxima());
     }
     public static void elegirValores(Atraccion atraccion){
-        String respuesta;
-        int numeroLotes;
-        int numeroStandard;
-        int numeroFastPass;
-        int tiempoEntreLote;
+        String respuesta;       //string de si o no para usar valores por defecto 
+        int numeroLotes;        //cantidad de lotes
+        int numeroStandard;     //asistentes en un lote
+        int numeroFastPass;     //numero de fast pass en un lote
+        int tiempoEntreLote;    //tiempo que tarda un lote
         boolean fallo = true;
         do {
             System.out.println("Desea introducir los valores Predifinido: Indroduzca si o no");
@@ -46,7 +46,7 @@ public class Main implements IDATOS{
     }
     public static int introducirValor(String mensaje){
         System.out.println(mensaje);
-        int valor = numeroCorrecto();
+        int valor = numeroCorrecto();   //numero para los datos por pantalla
         return valor;
     }
     public static int numeroCorrecto(){

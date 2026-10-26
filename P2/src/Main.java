@@ -7,12 +7,12 @@ import java.io.*;
 
 public class Main implements IMETODOS{
     public static void main(String[] args) {
-        MotorJuego motorJuego = new MotorJuego();
+        MotorJuego motorJuego = new MotorJuego();   //objeto motor q ejecuta la logica
         try {
-            FicheroSecuencial<JugadaCarta> fichero = new FicheroSecuencial<>("acciones.csv", ",");
-            JugadaCarta lector = new JugadaCarta();
+            FicheroSecuencial<JugadaCarta> fichero = new FicheroSecuencial<>("acciones.csv", ",");  //fichero que contiene las acciones a realizar en la partida
+            JugadaCarta lector = new JugadaCarta();  //lecctor de lineas del fichero
             while(!fichero.finDelFichero()){
-                JugadaCarta jugada = fichero.leerLinea(lector);
+                JugadaCarta jugada = fichero.leerLinea(lector); //accion jugada
                 mecanicaJuego(motorJuego,jugada);
                 System.out.println(motorJuego.mostrarEstado());
             }
@@ -22,7 +22,7 @@ public class Main implements IMETODOS{
     }
     public static void mecanicaJuego(MotorJuego motorJuego,JugadaCarta jugada){
         System.out.println(jugada.toString());
-        String accion = jugada.getAccion().toLowerCase();
+        String accion = jugada.getAccion().toLowerCase(); //tipo de accion valida
         switch (accion){
             case ACCION1_ROBAR:
                 try {
@@ -33,7 +33,7 @@ public class Main implements IMETODOS{
                 break;
             case ACCION2_JUGAR:
                 try{
-                Carta cartaJugada = Carta.valueOf(jugada.getNombreCarta().toUpperCase());
+                Carta cartaJugada = Carta.valueOf(jugada.getNombreCarta().toUpperCase());  //carta usada
                 motorJuego.jugar(jugada.getJugador(),cartaJugada);
                 }catch (IllegalArgumentException e){
                         System.out.println("La carta: " + jugada.getNombreCarta() + " no es válida");
@@ -41,7 +41,7 @@ public class Main implements IMETODOS{
                 break;
             case ACCION3_DESCARTAR:
                 try {
-                    Carta cartaDescartada = Carta.valueOf(jugada.getNombreCarta().toUpperCase());
+                    Carta cartaDescartada = Carta.valueOf(jugada.getNombreCarta().toUpperCase()); //carta usada
                     motorJuego.descartar(cartaDescartada);
                 } catch (IllegalArgumentException e) {
                     System.out.println("La carta: " + jugada.getNombreCarta() + " no es válida");

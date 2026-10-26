@@ -59,18 +59,18 @@ public class GestionElectoral {
     private static void generarListasElectorales(List<Candidato> todosCandidatos, ListaElectoral bBMadrid,
             ListaElectoral bBBarcelona, ListaElectoral bSOEMadrid, ListaElectoral bSOEBarcelona) {
         for (int i = 0; i < todosCandidatos.size(); i++) {
-            Candidato c = todosCandidatos.get(i);
-            if (c.getPartido().equalsIgnoreCase("BB")) {
-                if (c.getCircunscripcion().equalsIgnoreCase("Madrid")) {
-                    bBMadrid.agregarCandidato(c);
+            Candidato cGenerico = todosCandidatos.get(i);       //candidato cualquiera
+            if (cGenerico.getPartido().equalsIgnoreCase("BB")) {
+                if (cGenerico.getCircunscripcion().equalsIgnoreCase("Madrid")) {
+                    bBMadrid.agregarCandidato(cGenerico);
                 } else {
-                    bBBarcelona.agregarCandidato(c);
+                    bBBarcelona.agregarCandidato(cGenerico);
                 }
             } else {
-                if (c.getCircunscripcion().equalsIgnoreCase("Madrid")) {
-                    bSOEMadrid.agregarCandidato(c);
+                if (cGenerico.getCircunscripcion().equalsIgnoreCase("Madrid")) {
+                    bSOEMadrid.agregarCandidato(cGenerico);
                 } else {
-                    bSOEBarcelona.agregarCandidato(c);
+                    bSOEBarcelona.agregarCandidato(cGenerico);
                 }
             }
         }
@@ -96,12 +96,12 @@ public class GestionElectoral {
         System.out.println("----------------------------------------------------------");
         System.out.println("2. ALERTAS DE PARIDAD EN CANDIDATURAS");
         System.out.println("----------------------------------------------------------");
-        List<ListaElectoral> noCumplenParidad = new ArrayList<>();
+        List<ListaElectoral> noCumplenParidad = new ArrayList<>();          //lista para verificar paridad
         noCumplenParidad.add(BBBarcelona);
         noCumplenParidad.add(BBMadrid);
         noCumplenParidad.add(BSOEBarcelona);
         noCumplenParidad.add(BSOEMadrid);
-        Iterator<ListaElectoral> paridad = noCumplenParidad.iterator();
+        Iterator<ListaElectoral> paridad = noCumplenParidad.iterator();     //iterador para comparar paridad
         while (paridad.hasNext()){
             ListaElectoral l1 = paridad.next();
             if(l1.cumpleParidad()){

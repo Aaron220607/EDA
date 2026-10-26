@@ -5,11 +5,11 @@
 
 import java.util.PriorityQueue;
 public class Atraccion implements IDATOS{
-    private PriorityQueue<Asistente> colaAtraccion;
-    private int tiempo;
-    private String visitanteMasEspera;
-    private int horaMaxima;
-    private String informacion;
+    private PriorityQueue<Asistente> colaAtraccion;     //cola con prioridad que ordena los asistente
+    private int tiempo;                                 //variable que simula la duracion de la atraccion
+    private String visitanteMasEspera;                  //visitante que mas espera
+    private int horaMaxima;                             //tiempo maximo que a esperado un visitante
+    private String informacion;                         //guarda y devuelve la informacion del asistente
 
     public Atraccion() {
         this.colaAtraccion = new PriorityQueue<Asistente>();
@@ -22,21 +22,21 @@ public class Atraccion implements IDATOS{
         int horaLlegada = N * L;
 
         for (int j = 0; j < E; j++) {
-            Asistente a1 = new Asistente(Pase.STANDARD, horaLlegada);
-            colaAtraccion.offer(a1);
+            Asistente AStandar = new Asistente(Pase.STANDARD, horaLlegada);         //un asistente standar
+            colaAtraccion.offer(AStandar);
         }
 
         for (int j = 0; j < F; j++) {
-            Asistente a1 = new Asistente(Pase.FAST_PASS, horaLlegada);
-            colaAtraccion.offer(a1);
+            Asistente AFast = new Asistente(Pase.FAST_PASS, horaLlegada);           //un asistente con fast pass
+            colaAtraccion.offer(AFast);
         }
 
-        Asistente a1 = new Asistente(Pase.VIP, horaLlegada);
-        colaAtraccion.offer(a1);
+        Asistente AVip = new Asistente(Pase.VIP, horaLlegada);                      //un asistente con vip pass
+        colaAtraccion.offer(AVip);
     }
     void montarAtraccion() {
             for (int i = 0; i < 5 && !colaAtraccion.isEmpty(); i++) {
-                Asistente fuera = colaAtraccion.poll();
+                Asistente fuera = colaAtraccion.poll();                             //asistente que sale de la atraccion  
                 int esperaAsistente = (tiempo - fuera.getHoraLlegada());
                 setInformacion(fuera.toString());
                 setInformacion("\n");
@@ -48,7 +48,7 @@ public class Atraccion implements IDATOS{
             tiempo += TIEMPO_ATRACCION;
     }
     public String simular(int n, int e, int f, int l) {
-        int siguienteLote = 0;
+        int siguienteLote = 0;                                                      //contador de los lotes
         while (siguienteLote < n || !colaAtraccion.isEmpty()) {
             while (siguienteLote < n &&
                     siguienteLote * l <= tiempo) {

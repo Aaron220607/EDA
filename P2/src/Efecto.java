@@ -4,8 +4,8 @@
 ***********************************************************************/
 
 public class Efecto {
-    private Carta carta;
-    private String jugador;
+    private Carta carta;  //una instancia de carta
+    private String jugador;  //nombre del jugador q uso la carta
     public Efecto(String jugador,Carta carta){
         this.carta=carta;
         this.jugador=jugador;

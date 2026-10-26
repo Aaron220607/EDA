@@ -8,9 +8,9 @@
 import java.util.StringTokenizer;
 
 public class JugadaCarta implements Lector<JugadaCarta>{
-    private String jugador;
-    private String accion;
-    private String nombreCarta;
+    private String jugador;     //nombre del jugador
+    private String accion;      //nombre de accion
+    private String nombreCarta; //nombre de la carta usada
 
     public JugadaCarta leerLinea(StringTokenizer linea){
         jugador = linea.nextToken();

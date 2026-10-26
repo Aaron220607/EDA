@@ -85,14 +85,14 @@ public class ListaElectoral {
         this.votosPartido = votosPartido;
     }
 
-     public boolean cumpleParidad() {
+    public boolean cumpleParidad() {
         boolean paridad = false;
-      double  mujeresPorcentaje = getPorcentajeMujeres();
-      double hombrePorcentaje = getPorcentajeHombres();
-         if((40<= mujeresPorcentaje && mujeresPorcentaje<=60) && (40<= hombrePorcentaje && hombrePorcentaje<=60)) {
-             paridad = true;
-         }
-      return paridad;
+        double  mujeresPorcentaje = getPorcentajeMujeres();
+        double hombrePorcentaje = getPorcentajeHombres();
+            if((40<= mujeresPorcentaje && mujeresPorcentaje<=60) && (40<= hombrePorcentaje && hombrePorcentaje<=60)) {
+            paridad = true;
+        }
+        return paridad;
     }
 
     public int calcularEscanos() {
@@ -101,12 +101,12 @@ public class ListaElectoral {
     }
 
     public List<Candidato> getCandidatosElectos() {
-       List<Candidato> candidatosElectos = new ArrayList<>();
-       int k = calcularEscanos();
-           for (int i = 0; i< k && i<candidatos.size(); i++) {
-               candidatosElectos.add(candidatos.get(i));
-           }
-       return candidatosElectos;
+        List<Candidato> candidatosElectos = new ArrayList<>();  //lista de candidatos electos
+        int k = calcularEscanos();
+            for (int i = 0; i< k && i<candidatos.size(); i++) {
+                candidatosElectos.add(candidatos.get(i));
+            }
+        return candidatosElectos;
     }
 
     public void mostrarListaCandidatos() {
