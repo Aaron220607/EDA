@@ -4,6 +4,7 @@
 ***********************************************************************/
 
 import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main implements IMETODOS{
     public static void main(String[] args) {
@@ -20,6 +21,15 @@ public class Main implements IMETODOS{
             System.out.println("Fichero no encontrado");
         }
     }
+
+/*********************************************************************
+* Method name:mecanicaJuego
+*
+* Description of the Method: leemos la opcion del ficher y en funcion de esta se realiza una accion u otra mediante motorjuego
+*
+* Calling arguments: MotorJuego motorJuego,JugadaCarta jugada
+*********************************************************************/
+
     public static void mecanicaJuego(MotorJuego motorJuego,JugadaCarta jugada){
         System.out.println(jugada.toString());
         String accion = jugada.getAccion().toLowerCase(); //tipo de accion valida

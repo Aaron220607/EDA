@@ -6,6 +6,16 @@
 public class Efecto {
     private Carta carta;  //una instancia de carta
     private String jugador;  //nombre del jugador q uso la carta
+
+/*********************************************************************
+* Method name:Efecto
+*
+* Description of the Method: Constructor de efecto
+*
+* Calling arguments: String jugador y Carta carta
+son las variables que forman la clase.
+*********************************************************************/
+
     public Efecto(String jugador,Carta carta){
         this.carta=carta;
         this.jugador=jugador;

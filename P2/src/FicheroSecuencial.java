@@ -14,6 +14,14 @@ public class FicheroSecuencial <T>{
     /**
      * Constructor de la clase FicheroSecuencial
      */
+
+/*********************************************************************
+* Method name:FicheroSecuencial
+*
+* Description of the Method: Constructor de FicheroSecuencial
+*
+* Calling arguments: String nombreFichero, String separador contiene las variables del fichero
+*********************************************************************/
     public FicheroSecuencial(String nombreFichero, String separador) throws FileNotFoundException{
         this.nombreFichero = new Scanner(new File(nombreFichero));
         this.separador = separador;

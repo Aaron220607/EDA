@@ -12,6 +12,14 @@ public class JugadaCarta implements Lector<JugadaCarta>{
     private String accion;      //nombre de accion
     private String nombreCarta; //nombre de la carta usada
 
+
+    /*********************************************************************
+* Method name:leerLinea
+*
+* Description of the Method: lee la linea del fichero guardando las variables que esta contenga
+*
+* Calling arguments: StringTokenizer linea
+*********************************************************************/
     public JugadaCarta leerLinea(StringTokenizer linea){
         jugador = linea.nextToken();
         accion = linea.nextToken();
