@@ -22,7 +22,7 @@ public class ListaElectoral {
     }
 
     public void agregarCandidato(Candidato candidato) {
-       candidatos.add(candidato);
+        candidatos.add(candidato);
     }
 
     public String getPartido() {
