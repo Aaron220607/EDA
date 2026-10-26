@@ -1,3 +1,8 @@
+/*********************************************************************
+* Class Name:IDATOS
+* Class description: son las variables base para la simulacion pudiendo no ser usadas
+**********************************************************************/
+
 public interface IDATOS {
     int NUMERO_LOTES = 5;
     int NUMERO_STANDART  = 4;

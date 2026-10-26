@@ -1,3 +1,8 @@
+/*********************************************************************
+* Class Name:Efecto
+* Class description: Clase que representa el objeto de efecto
+***********************************************************************/
+
 public class Efecto {
     private Carta carta;
     private String jugador;

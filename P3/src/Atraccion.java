@@ -1,3 +1,7 @@
+/*********************************************************************
+* Class Name:Atraccion
+* Class description: clase que representa a la atraccion y sus vagones
+**********************************************************************/
 
 import java.util.PriorityQueue;
 public class Atraccion implements IDATOS{

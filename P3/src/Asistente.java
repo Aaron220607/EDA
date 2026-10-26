@@ -1,3 +1,8 @@
+/*********************************************************************
+* Class Name:Asistente
+* Class description: clase que representa a los asistentes de la atraccion
+**********************************************************************/
+
 public class Asistente implements Comparable <Asistente>{
     private static int contador = 0;
     private  int id;

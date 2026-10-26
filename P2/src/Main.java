@@ -1,3 +1,8 @@
+/*********************************************************************
+* Class Name:Main
+* Class description: clase que llama a motor de juego y asi simular la partida
+***********************************************************************/
+
 import java.io.*;
 
 public class Main implements IMETODOS{

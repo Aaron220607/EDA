@@ -1,3 +1,8 @@
+/*********************************************************************
+* Class Name:IMmetodos
+* Class description: interfaz del programa utilizada para seleccionar las 
+    acciones del jugador usada en motor de juego
+***********************************************************************/
 
 
 public interface IMETODOS{

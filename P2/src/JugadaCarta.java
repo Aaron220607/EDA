@@ -1,3 +1,10 @@
+/*********************************************************************
+* Class Name:JugadaCarta
+* Class description: es la clase que relaciona al jugador y a la carta que esta usando
+**********************************************************************
+*/
+
+
 import java.util.StringTokenizer;
 
 public class JugadaCarta implements Lector<JugadaCarta>{

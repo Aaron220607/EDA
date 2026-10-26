@@ -1,3 +1,8 @@
+/*********************************************************************
+* Class Name:MotorJuego
+* Class description: clase que tiene toda la logica para la simulacion de juego
+***********************************************************************/
+
 import java.util.Stack;
 public class MotorJuego implements IMETODOS{
     private Stack<Carta> mazoRobo;

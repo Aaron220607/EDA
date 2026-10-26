@@ -1,3 +1,7 @@
+/*********************************************************************
+* Class Name:Main
+* Class description: tiene la simulacion de los vagones y los asistentes mostrando los datos por pantalla
+**********************************************************************/
 
 import java.util.*;
 
