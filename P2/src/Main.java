@@ -1,10 +1,10 @@
 /*********************************************************************
 * Class Name:Main
 * Class description: clase que llama a motor de juego y asi simular la partida
+* Author/s name: ABA_BD2_01
 ***********************************************************************/
 
 import java.io.*;
-import java.util.StringTokenizer;
 
 public class Main implements IMETODOS{
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Main implements IMETODOS{
 /*********************************************************************
 * Method name:mecanicaJuego
 *
-* Description of the Method: leemos la opcion del ficher y en funcion de esta se realiza una accion u otra mediante motorjuego
+* Description of the Method: lee la opcion del fichero y en funcion de esta se realiza una accion u otra mediante motorJuego
 *
 * Calling arguments: MotorJuego motorJuego,JugadaCarta jugada
 *********************************************************************/

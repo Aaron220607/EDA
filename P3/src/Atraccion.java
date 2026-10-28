@@ -1,6 +1,7 @@
 /*********************************************************************
 * Class Name:Atraccion
 * Class description: clase que representa a la atraccion y sus vagones
+* Author/s name: ABA_BD2_01
 **********************************************************************/
 
 import java.util.PriorityQueue;
@@ -29,9 +30,9 @@ public class Atraccion implements IDATOS{
 * Method name:generarVisitantes
 *
 * Description of the Method: genera visitantes en funcion de los parametros, creando asistentes 
-* dependiendo de la hora de llegada y su pase,los añadimos a la cola mediante el metodo offer
+* dependiendo de la hora de llegada y su pase,los añade a la cola mediante el metodo offer y
 * al ser una cola prioritaria los ordenara en base a la logica de esta practica
-* Calling arguments:n=numero de lotes   E=numero de estandars    F=numero de fast pass    L=tiempo entre lotes
+* Calling arguments:n=numero de lotes   E=numero de standar's    F=numero de fast pass    L=tiempo entre lotes
 *********************************************************************/
 
     void generarVisitantes(int N, int E, int F, int L) {      
@@ -55,8 +56,8 @@ public class Atraccion implements IDATOS{
 * Method name:montarAtraccion
 *
 * Description of the Method: saca el lote de asistentes que simulan el viaje en la atraccion
-* calculando el tiempo de espera del asistente añadiendo la informacion mediante el set informacion
-* vemos si el asistente es el que mas a esperado para guardar sus datos
+* calculando el tiempo de espera del asistente, añadiendo la informacion mediante el set informacion.
+* Comprueba si el asistente es el que mas a esperado para guardar sus datos
 * Calling arguments:void
 *********************************************************************/ 
     

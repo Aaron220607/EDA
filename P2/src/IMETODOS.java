@@ -1,7 +1,8 @@
 /*********************************************************************
-* Class Name:IMmetodos
+* Class Name:IMETODOS
 * Class description: interfaz del programa utilizada para seleccionar las 
-    acciones del jugador usada en motor de juego
+    acciones del jugador implementada en motor de juego
+* Author/s name: ABA_BD2_01
 ***********************************************************************/
 
 

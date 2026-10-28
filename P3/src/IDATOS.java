@@ -1,6 +1,7 @@
 /*********************************************************************
 * Class Name:IDATOS
-* Class description: son las variables base para la simulacion pudiendo no ser usadas
+* Class description: interfaz que contiene las variables base para la simulacion pudiendo no ser usadas
+* Author/s name: ABA_BD2_01
 **********************************************************************/
 
 public interface IDATOS {

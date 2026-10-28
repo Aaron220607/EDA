@@ -1,6 +1,7 @@
 /*********************************************************************
 * Class Name:MotorJuego
 * Class description: clase que tiene toda la logica para la simulacion de juego
+* Author/s name: ABA_BD2_01
 ***********************************************************************/
 
 import java.util.Stack;
@@ -17,11 +18,11 @@ public class MotorJuego implements IMETODOS{
 
 
 /*********************************************************************
-* Method name:robar
+* Method name:robar 
 *
 * Description of the Method: simula robar carta de la pila mazo de robo,
-* para ello comprobando que el mazo este vacio si es asi se comprueva que este vacio
-* si ocurren ambos casos salta una excepcion, llamamos al metodode reciclaje para quitar una de robo mediante el pop de pilas
+* para ello comprobando que el mazo este vacio, si es asi se comprueba que este vacio,
+* si ocurren ambos casos salta una excepcion, llamamos al metodo de reciclaje para quitar una de robo mediante el pop de pilas
 * Calling arguments:void
 *********************************************************************/
     
@@ -37,7 +38,7 @@ public class MotorJuego implements IMETODOS{
 /*********************************************************************
 * Method name:jugar
 *
-* Description of the Method: creamos un objeto efecto y lo añadimos a la pila efecto mediante push
+* Description of the Method: crea un objeto efecto y lo añade a la pila efecto mediante push
 * Calling arguments:String jugador,Carta carta
 *********************************************************************/    
     public void jugar(String jugador,Carta carta){
@@ -58,7 +59,7 @@ public class MotorJuego implements IMETODOS{
 /*********************************************************************
 * Method name:resolver
 *
-* Description of the Method: sacamos del mazo de efecto, el efecto usando su 
+* Description of the Method: saca del mazo de efecto el efecto usando su 
 * toString para obtener su informacion y descartar la carta
 * Calling arguments:void
 *********************************************************************/ 
@@ -76,7 +77,7 @@ public class MotorJuego implements IMETODOS{
 /*********************************************************************
 * Method name:mostrarEstado
 *
-* Description of the Method: muestra el estado de los mazos den cada turno de la partida
+* Description of the Method: muestra el estado de los mazos en cada turno de la partida
 * Calling arguments:void
 *********************************************************************/ 
 
@@ -97,7 +98,7 @@ public class MotorJuego implements IMETODOS{
 /*********************************************************************
 * Method name:llenarMazo
 *
-* Description of the Method: guarda los diferentes tipos de cartas en un array y lo recorremos 
+* Description of the Method: guarda los diferentes tipos de cartas en un array y lo recorre 
 * guardando las cartas en el mazo de robo
 * Calling arguments:Stack<Carta> mazoRobo
 *********************************************************************/
@@ -113,8 +114,8 @@ public class MotorJuego implements IMETODOS{
 /*********************************************************************
 * Method name:reciclaje
 *
-* Description of the Method: mientras que el mazo de descartes no este vacio sacamos una carta del mazo
-*de descartes y hacemos push al mazo de robo
+* Description of the Method: mientras que el mazo de descartes no este vacio saca una carta del mazo
+*de descartes y hace push al mazo de robo
 * Calling arguments:Stack<Carta> mazoRobo,Stack<Carta> mazoDescartes
 *********************************************************************/
 

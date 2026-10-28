@@ -1,6 +1,7 @@
 /*********************************************************************
 * Class Name:Asistente
 * Class description: clase que representa a los asistentes de la atraccion
+* Author/s name: ABA_BD2_01
 **********************************************************************/
 
 public class Asistente implements Comparable <Asistente>{
@@ -40,10 +41,10 @@ public class Asistente implements Comparable <Asistente>{
 /*********************************************************************
 * Method name:compareTo
 *
-* Description of the Method: metodo que nos pide implementar la interfaz de comparable,
-* en el cual crearemos la logica de la prioridad de nuestra clase
-* en esta practica compararemos por tipo de pase,tiempo o id devolveremos positivo si el objeto actual es prioritario
-* al objeto dado por argumento, negativo en caso contrareo y 0 si son iguales
+* Description of the Method: metodo que pide implementar la interfaz de comparable,
+* en el cual se crea la logica de la prioridad de nuestra clase.
+* En esta practica se compara por tipo de pase,tiempo o id, devolviendo positivo si el objeto actual es prioritario
+* al objeto dado por argumento o negativo en caso contrario y 0 si son iguales
 * Calling arguments:Asistente otro
 *********************************************************************/  
 

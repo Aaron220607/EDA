@@ -1,6 +1,7 @@
 /*********************************************************************
 * Class Name:Main
-* Class description: tiene la simulacion de los vagones y los asistentes mostrando los datos por pantalla
+* Class description: clase que contiene la simulacion de los vagones y los asistentes mostrando los datos por pantalla
+* Author/s name: ABA_BD2_01
 **********************************************************************/
 
 import java.util.*;
@@ -17,9 +18,9 @@ public class Main implements IDATOS{
 /*********************************************************************
 * Method name:elegirValores
 *
-* Description of the Method: permite elegir si usar los valores predeterminados en la interfaz IDatos 
-* o unos insertados por pantalla llamando al metodo introducir valor para posterior mente llamar 
-* a simular desplegandola informacion por pantalla
+* Description of the Method: permite elegir si utilizar los valores predeterminados en la interfaz IDatos 
+* o unos insertados por pantalla llamando al metodo introducirValor para posteriormente llamar 
+* a simular, desplegando la informacion por pantalla
 * Calling arguments:Atraccion atraccion
 *********************************************************************/     
 
@@ -58,7 +59,7 @@ public class Main implements IDATOS{
 /*********************************************************************
 * Method name:introducirValor
 *
-* Description of the Method:permite introducir valores que sustitullen a los predeterminados
+* Description of the Method:permite introducir valores que sustituyen a los predeterminados
 * Calling arguments:String mensaje
 *********************************************************************/    
 
@@ -71,7 +72,7 @@ public class Main implements IDATOS{
 /*********************************************************************
 * Method name:numeroCorrecto
 *
-* Description of the Method:comprueva que el numero insertado sea un int positivo repitiendose hasta que sea correcto
+* Description of the Method:comprueba que el numero insertado sea un int positivo, repitiendose hasta que sea correcto
 * Calling arguments:void
 *********************************************************************/ 
 

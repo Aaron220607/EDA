@@ -6,6 +6,7 @@ import utils.SequentialFile;
 /**
  * Programa principal para la gestion, verificacion y asignacion de candidaturas
  * electorales.
+ * Author/s name: ABA_BD2_01
  * 
  */
 public class GestionElectoral {
@@ -60,7 +61,7 @@ public class GestionElectoral {
 * Method name:generarListasElectorales
 *
 * Description of the Method: recorre los candidatos creando un objeto candidato para sacarlo del array y compara a que partido pertenece
-* y a su circuscripcion añadiendolo a la lista correspondiente
+* y su circunscripcion añadiendolo a la lista correspondiente
 * Calling arguments:List<Candidato> todosCandidatos, ListaElectoral bBMadrid,
 * ListaElectoral bBBarcelona, ListaElectoral bSOEMadrid, ListaElectoral bSOEBarcelona
 *********************************************************************/ 
@@ -104,7 +105,7 @@ public class GestionElectoral {
 * Method name:verificarParidad
 *
 * Description of the Method: genera una lista para comparar la paridad de los
-* candidatos, si un candidato no la cumplees eliminado de la lista
+* candidatos, si un candidato no la cumple lo elimina de la lista
 * Calling arguments:ListaElectoral BBMadrid, ListaElectoral BBBarcelona,
 * ListaElectoral BSOEMadrid, ListaElectoral BSOEBarcelona
 *********************************************************************/ 
@@ -132,16 +133,16 @@ public class GestionElectoral {
 /*********************************************************************
 * Method name:mostrarAlertasParidad
 *
-* Description of the Method:recorre la lista de alertas y saca por pantalla los datos del partido que no cumpla
-* la paridad y muestra los porcentages de cada genero
+* Description of the Method:recorre la lista de alertas e imprime por pantalla los datos del partido que no cumpla
+* la paridad, mostrando los porcentages de cada genero
 * Calling arguments:List<ListaElectoral> listasAlertas
 *********************************************************************/
 
     private static void mostrarAlertasParidad(List<ListaElectoral> listasAlertas) {
         if (!listasAlertas.isEmpty()){
             for (ListaElectoral l : listasAlertas) {
-                System.out.println(" El partido: " + l.getPartido() + " Con circuncripcion en " + l.getCircunscripcion());
-                System.out.println(" No cumple la paridad... pues sus candidatos son ");
+                System.out.println(" El partido: " + l.getPartido() + " Con circunscripcion en " + l.getCircunscripcion());
+                System.out.println(" No cumple la paridad pues sus candidatos son ");
                 System.out.printf("%.2f", l.getPorcentajeHombres());
                 System.out.println("% de hombres ");
                 System.out.printf("%.2f", l.getPorcentajeMujeres());
@@ -188,7 +189,7 @@ public class GestionElectoral {
 /*********************************************************************
 * Method name:mostrarListaElectos
 *
-* Description of the Method: recorre la lista de electos y saca la informacion por pantalla
+* Description of the Method: recorre la lista de electos e imprime la informacion por pantalla
 * Calling arguments:String partido, String circunscripcion, List<Candidato> electos
 *********************************************************************/
 

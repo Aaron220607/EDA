@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Clase que representa la lista electoral de un partido en una circunscripcion
  * determinada.
- * 
+ * Author/s name: ABA_BD2_01
  */
 public class ListaElectoral {
     private static final int VOTOS_ESCANO = 30000;
@@ -123,7 +123,7 @@ public class ListaElectoral {
 * Method name:getCandidatosElectos
 *
 * Description of the Method: crea una lista de candidatos electos recorriendola en funcion
-* de los escaños obtenidos y del tamaño de la lista de candidatos añadiendo a la lista los electos por orden de indice
+* de los escaños obtenidos y del tamaño de la lista de candidatos, añadiendo a la lista los electos por orden de indice
 * Calling arguments:void
 *********************************************************************/
     

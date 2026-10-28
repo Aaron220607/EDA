@@ -1,6 +1,7 @@
 /*********************************************************************
 * Class Name:JugadaCarta
-* Class description: es la clase que relaciona al jugador y a la carta que esta usando
+* Class description: clase que relaciona al jugador y a la carta que esta usando
+* Author/s name: ABA_BD2_01
 **********************************************************************
 */
 

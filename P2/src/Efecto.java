@@ -1,11 +1,12 @@
 /*********************************************************************
 * Class Name:Efecto
 * Class description: Clase que representa el objeto de efecto
+* Author/s name: ABA_BD2_01
 ***********************************************************************/
 
 public class Efecto {
     private Carta carta;  //una instancia de carta
-    private String jugador;  //nombre del jugador q uso la carta
+    private String jugador;  //nombre del jugador que uso la carta
 
 /*********************************************************************
 * Method name:Efecto
