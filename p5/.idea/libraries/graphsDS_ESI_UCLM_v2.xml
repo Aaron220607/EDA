@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="graphsDS_ESI_UCLM_v2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/graphsDS_ESI_UCLM_v2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
