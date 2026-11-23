@@ -18,6 +18,6 @@ public class Migracion {
         finally {
             ficheroEscala.cerrarFichero();
         }
-
+        // Hacer lo mismo pero con tramos (CREAR CLASE PRIMERO TMB)
     }
 }
