@@ -8,7 +8,7 @@ public class Escala {
     private double longitud;
     private Rol rol;
 
-    public Escala(String nombre, int id, String pais, double latitud, double longitud, Rol rol) {
+    public Escala( int id,String mombre, String pais, double latitud, double longitud, Rol rol) {
         this.nombre = nombre;
         this.id = id;
         this.pais = pais;
