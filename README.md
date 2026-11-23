@@ -11,5 +11,5 @@ the index of the labs is:
 2. [**Stacks**](https://github.com/Aaron220607/EDA/tree/master/P2)
 3. [**Queues**](https://github.com/Aaron220607/EDA/tree/master/P3)
 4. [**List**](https://github.com/Aaron220607/EDA/tree/master/P4)
-5.[ **Grahps**](https://github.com/Aaron220607/EDA/tree/master/p5)
+5. [ **Grahps**](https://github.com/Aaron220607/EDA/tree/master/p5)
 6.  **Trees**
