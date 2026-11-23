@@ -8,7 +8,7 @@ public class LectorEscala implements Lector<Escala> {
         String pais = linea.nextToken();
         double lat = Double.parseDouble(linea.nextToken());
         double lon = Double.parseDouble(linea.nextToken());
-        Rol rol = Rol.valueOf(linea.nextToken());
+        Rol rol = Rol.valueOf(linea.nextToken().toUpperCase());
         return new Escala(id,nombre,pais,lat,lon,rol);
     }
 }

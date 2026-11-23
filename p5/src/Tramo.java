@@ -1,4 +1,6 @@
-public class Tramo {
+import graphsDS_ESI_UCLM_v2.Identity;
+
+public class Tramo implements Identity {
     private  int idOrigen;
     private int idDestino;
     private  double distanciaKm;
@@ -23,5 +25,11 @@ public class Tramo {
 
     public int getIdDestino() {
         return idDestino;
+    }
+
+    @Override
+
+    public String getID() {
+    return idOrigen + "-" + idDestino;
     }
 }

@@ -1,6 +1,6 @@
 import graphsDS_ESI_UCLM_v2.*;
 
-public class Escala {
+public class Escala implements Identity {
     private int id;
     private String nombre;
     private String pais;
@@ -8,7 +8,7 @@ public class Escala {
     private double longitud;
     private Rol rol;
 
-    public Escala( int id,String mombre, String pais, double latitud, double longitud, Rol rol) {
+    public Escala( int id,String nombre, String pais, double latitud, double longitud, Rol rol) {
         this.nombre = nombre;
         this.id = id;
         this.pais = pais;

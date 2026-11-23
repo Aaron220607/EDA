@@ -1,0 +1,51 @@
+.data
+
+v1: .word 1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,10 # Vector 1
+v2: .word 0,0,0,0,0,0,0,0,0,0 # Vector a modificar
+cadena: .string " , "
+
+.text
+
+.globl main
+
+main:
+
+la t0, v1 # guardamos la direccion de memoria de v1 en t0
+la t1, v2 # guardanos la direccion de memoria de v2 en t1
+
+li t2, 1 # i
+li t3, 11 # N 
+
+lw t4, 0(t0) # puntero para la primera posicion del vecor original (v1 --> i-1)
+lw t5, 4(t0) # puntero para la segunda posicion del vector original (v1 --> i)
+
+
+
+bucle:
+
+beq t2, t3, fin_bucle # comparamoos si i y N son iguales. Si son iguales salta al final del bucle
+
+add a2, t4, t5 # guardamos en a2 la suma de t4 y t5 
+sw a2, 0(t1) # guardamos en la posicion del vector a modificar que corresponda el valor almacenado en a2
+
+lw a0, 0(t1) # Cargamos en a0 la posicion que corresponda del vector a modificar
+li a7, 1 # Cargamos en a7 la llamada a sistema para imprimir un entero
+ecall
+
+la a0, cadena # cargamos en a0 la direccion de memoria de la cadena que queremos imprimir
+li a7, 4 # cargamos en a7 la llamada a sistema para imprimir un string
+ecall
+
+addi t2, t2, 1 # Incrementamos i a uno más (i+1)
+addi t0, t0, 4 # Incrementamos la direccion de memria del vector original (v1 + 4)
+addi t1, t1, 4  # Incrementamos la direccion de memoria del vector a modificar (v2 + 4)
+
+mv t4, t5 # movemos el primer puntero a la siguiente posicion
+lw t5, 4(t0) # incrementamos el siguiente puntero para seleccionar la siguiente posicion del vector original
+
+
+j bucle 
+
+fin_bucle:
+li a7, 10
+ecall
