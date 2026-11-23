@@ -1,0 +1,9 @@
+public enum Rol {
+        CRIA_EUROPA,
+        PARADA_OCCIDENTAL,
+        PARADA_ORIENTAL,
+        PARADA_AFRICANA,
+        PASO_CRITICO_OCCIDENTAL,
+        PASO_CRITICO_ORIENTAL,
+        INVERNADA_AFRICA;
+}
