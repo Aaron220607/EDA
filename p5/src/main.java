@@ -29,7 +29,19 @@ public class main {
         
             System.out.print("> ");
             opcion=teclado.next().charAt(0);
-            salir=true;
+            switch (opcion) {
+                case 's':
+                    salir=true;
+                    break;
+                case 'c':
+
+                break;
+                default:
+                    System.out.println("opcion invalida"+opcion);
+                    break;
+            }
+
+            
         }while(!salir);
     }
 }
