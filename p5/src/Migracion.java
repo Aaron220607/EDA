@@ -1,6 +1,7 @@
 import graphsDS_ESI_UCLM_v2.*;
 
 import java.io.*;
+import java.util.Iterator;
 
 public class Migracion {
     
@@ -33,10 +34,7 @@ public class Migracion {
                 Tramo tramo =ficheroTramo.leerLinea(new LectorTramo());
                 Vertex<Escala> origen=g.getVertex(String.valueOf(tramo.getIdOrigen()));
                 Vertex<Escala> destino=g.getVertex(String.valueOf(tramo.getIdDestino()));
-                                
-                
-
-                if (origen != null && destino != null) {
+                if (origen != null && destino != null && !g.areAdjacent(origen, destino)) {
                     Edge<Tramo> arista = g.insertEdge(origen, destino,tramo);
         
                 }
@@ -49,6 +47,25 @@ public class Migracion {
             ficheroTramo.cerrarFichero();
         }
         grafoVuelos=g;
-        
     }
+    public int getNumEscalas(){
+        return grafoVuelos.getN();
+    }
+    public int getNumTramos(){
+        return grafoVuelos.getM();
+    }
+    public double getDistanciaKm(){
+        double suma = 0;
+        double resultado = 0;
+        Iterator<Edge<Tramo>> it = grafoVuelos.getEdges();
+        while (it.hasNext()) {
+            suma += it.next().getData().getDistanciaKm();
+        }
+        if (grafoVuelos.getM() == 0) {
+            resultado = 0;
+        } else {
+            resultado = suma / grafoVuelos.getM();
+        }
+    return  resultado;
+   }
 }
