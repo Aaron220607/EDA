@@ -14,7 +14,7 @@ public class Migracion {
     public void cargar(String ficheroEscalas, String ficheroVuelos) throws IOException {
         Graph<Escala,Tramo> g = new TreeMapGraph<Escala, Tramo>();
         FicheroSecuencial<Escala> ficheroEscala = new FicheroSecuencial<Escala>(ficheroEscalas,",");
-        FicheroSecuencial<Tramo> ficheroTramo = new FicheroSecuencial<>(ficheroVuelos,",");
+        FicheroSecuencial<Tramo> ficheroTramo = new FicheroSecuencial<Tramo>(ficheroVuelos,",");
         try{
             ficheroEscala.saltarLinea();
             while(!ficheroEscala.finDelFichero()){
