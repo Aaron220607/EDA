@@ -1,12 +1,14 @@
 import graphsDS_ESI_UCLM_v2.*;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Migracion {
     
     private Graph<Escala,Tramo> grafoVuelos;
-
+    private Graph<Escala,Tramo> grafoAdicional;
         
 
 
@@ -22,6 +24,7 @@ public class Migracion {
                 Vertex<Escala> v = g.insertVertex(escala);
             }
             }catch (Exception e) {
+                
                 throw new IOException("Error al cargar las escalas", e);
             }
         finally {
@@ -46,6 +49,7 @@ public class Migracion {
             ficheroTramo.cerrarFichero();
         }
         grafoVuelos=g;
+        grafoAdicional=null;
     }
     public int getNumEscalas(){
         return grafoVuelos.getN();
@@ -66,5 +70,67 @@ public class Migracion {
             resultado = suma / grafoVuelos.getM();
         }
     return  resultado;
-   }
+    }
+
+    public void CreargrafoConecto(double n) {
+
+        Graph<Escala, Tramo> g = new TreeMapGraph<>();
+        List<Vertex<Escala>> original = new ArrayList<>();
+        List<Vertex<Escala>> nuevos = new ArrayList<>();
+        Iterator<Vertex<Escala>> vertices = grafoVuelos.getVertices();
+        while (vertices.hasNext()) {
+            Vertex<Escala> vertex = vertices.next();
+            original.add(vertex);
+            nuevos.add(g.insertVertex(vertex.getData()));
+        }
+        for (int i = 0; i < original.size(); i++) {
+            Vertex<Escala> v1 = original.get(i);
+            for (int j = i + 1; j < original.size(); j++) {
+                Vertex<Escala> v2 = original.get(j);
+                    double distancia = calcularDistancia(
+                        v1.getData(), v2.getData());
+                    
+                    if (distancia <= n) {
+                        Tramo tramo = buscarTramo(grafoVuelos, v1, v2);
+                        if (tramo == null || tramo.getProbExito()>=0.95) {
+                            Tramo nuevoTramo = new Tramo(v1.getData().getId(), v2.getData().getId(), distancia, 0.95, 0.05);
+                            g.insertEdge(g.getVertex(v1.getID()),g.getVertex(v2.getID()),nuevoTramo);
+                            
+                            
+                        }
+                    }
+                }
+            }
+
+        grafoAdicional = g;
+    }
+
+    public double calcularDistancia(Escala e1, Escala e2) {
+        double lat1 = Math.toRadians(e1.getLatitud());
+        double lon1 = Math.toRadians(e1.getLongitud());
+        double lat2 = Math.toRadians(e2.getLatitud());
+        double lon2 = Math.toRadians(e2.getLongitud());
+
+        double dlon = lon2 - lon1;
+        double dlat = lat2 - lat1;
+
+        double a = Math.pow(Math.sin(dlat / 2), 2)
+                + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dlon / 2), 2);
+        double c = 2 * Math.asin(Math.sqrt(a));
+
+
+        return c * 111.32;
+    }
+
+    public Tramo buscarTramo(Graph<Escala,Tramo> grafo, Vertex<Escala> origen, Vertex<Escala> destino) {
+        Iterator<Edge<Tramo>> aristas = grafo.incidentEdges(origen);
+        Tramo aristaBuscar=null;
+        while (aristas.hasNext()) {
+            Edge<Tramo> arista = aristas.next();
+            if (grafo.opposite(origen, arista).getID() == destino.getID()) {
+                aristaBuscar = arista.getData();
+            }
+        }
+        return aristaBuscar;
+    }
 }

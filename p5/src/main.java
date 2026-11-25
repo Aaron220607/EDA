@@ -25,19 +25,27 @@ public class main {
     public static void shellComandos(Migracion vuelos){
         boolean salir=false;
         char opcion;
+        double distancia;
         do{
         
             System.out.print("> ");
             opcion=teclado.next().charAt(0);
             switch (opcion) {
+                case 'c':
+                System.out.print("> ");
+                distancia=teclado.nextDouble();
+                vuelos.CreargrafoConecto(distancia);
+                System.out.print("negra ");
+                    break;
+                case 'v':
+
+                    break;
                 case 's':
                     salir=true;
                     break;
-                case 'c':
 
-                break;
                 default:
-                    System.out.println("opcion invalida"+opcion);
+                    System.out.println("opcion invalida ");
                     break;
             }
 

@@ -14,10 +14,16 @@ public class Tramo implements Identity {
         this.probExito = probExito;
         this.probFracaso = probFracaso;
     }
+    public Tramo(int idOrigen,int idDestino,double distanciaKm){
+        this.idOrigen=idOrigen;
+        this.idDestino=idDestino;
+        this.distanciaKm=distanciaKm;
+    }
+    public double getDistanciaKm() {
+    return distanciaKm; }
 
-    public double getDistanciaKm() { return distanciaKm; }
-
-    public double getProbExito() { return probExito; }
+    public double getProbExito() { 
+        return probExito; }
 
     public int getIdOrigen() {
         return idOrigen;
