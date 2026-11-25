@@ -14,7 +14,7 @@ public class GestionElectoral {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String rutaFichero = "candidaturas.csv";
+        String rutaFichero = "./data/candidaturas.csv";
         String separador = ";";
         List<Candidato> todosCandidatos = new ArrayList<>();
         ListaElectoral BBMadrid = new ListaElectoral("BB", "Madrid");

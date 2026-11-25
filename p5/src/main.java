@@ -9,8 +9,8 @@ public class main {
         try {
             System.out.println("Iniciando carga de datos...");
 
-            vuelo.cargar("p5\\escalas_migracion_aves.csv",
-            "p5\\vuelos_migracion_aves.csv");
+            vuelo.cargar("./data/escalas_migracion_aves.csv",
+            "./data/vuelos_migracion_aves.csv");
 
             System.out.println("Datos cargados correctamente.");
             System.out.println("Numero de Escalas: "+vuelo.getNumEscalas());

@@ -10,7 +10,7 @@ public class Main implements IMETODOS{
     public static void main(String[] args) {
         MotorJuego motorJuego = new MotorJuego();   //objeto motor q ejecuta la logica
         try {
-            FicheroSecuencial<JugadaCarta> fichero = new FicheroSecuencial<>("acciones.csv", ",");  //fichero que contiene las acciones a realizar en la partida
+            FicheroSecuencial<JugadaCarta> fichero = new FicheroSecuencial<>("./data/acciones.csv", ",");  //fichero que contiene las acciones a realizar en la partida
             JugadaCarta lector = new JugadaCarta();  //lecctor de lineas del fichero
             while(!fichero.finDelFichero()){
                 JugadaCarta jugada = fichero.leerLinea(lector); //accion jugada
