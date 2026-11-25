@@ -33,7 +33,10 @@ public class Tramo implements Identity {
         return idDestino;
     }
 
-    @Override
+
+    public double getProbFracaso() {
+        return probFracaso;
+    }
 
     public String getID() {
     return idOrigen + "-" + idDestino;

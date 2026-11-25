@@ -76,12 +76,10 @@ public class Migracion {
 
         Graph<Escala, Tramo> g = new TreeMapGraph<>();
         List<Vertex<Escala>> original = new ArrayList<>();
-        List<Vertex<Escala>> nuevos = new ArrayList<>();
         Iterator<Vertex<Escala>> vertices = grafoVuelos.getVertices();
         while (vertices.hasNext()) {
             Vertex<Escala> vertex = vertices.next();
             original.add(vertex);
-            nuevos.add(g.insertVertex(vertex.getData()));
         }
         for (int i = 0; i < original.size(); i++) {
             Vertex<Escala> v1 = original.get(i);
