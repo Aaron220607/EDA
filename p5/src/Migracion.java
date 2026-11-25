@@ -22,7 +22,6 @@ public class Migracion {
                 Vertex<Escala> v = g.insertVertex(escala);
             }
             }catch (Exception e) {
-                
                 throw new IOException("Error al cargar las escalas", e);
             }
         finally {
