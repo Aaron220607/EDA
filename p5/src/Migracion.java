@@ -80,6 +80,7 @@ public class Migracion {
         while (vertices.hasNext()) {
             Vertex<Escala> vertex = vertices.next();
             original.add(vertex);
+            g.insertVertex(vertex.getData());
         }
         for (int i = 0; i < original.size(); i++) {
             Vertex<Escala> v1 = original.get(i);

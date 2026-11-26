@@ -24,23 +24,23 @@ public class main {
     }
     public static void shellComandos(Migracion vuelos){
         boolean salir=false;
-        char opcion;
+        String opcion;
         double distancia;
         do{
         
             System.out.print("> ");
-            opcion=teclado.next().charAt(0);
-            switch (opcion) {
-                case 'c':
-                System.out.print("> ");
-                distancia=teclado.nextDouble();
-                vuelos.CreargrafoConecto(distancia);
+            opcion=teclado.nextLine();
+            List <String> listaOpciones = new LinkedList<String>(Arrays.asList(opcion.split(" ")));
+            switch (listaOpciones.getFirst()) {
+                case "c":
+                    listaOpciones.removeFirst();
+                vuelos.CreargrafoConecto(Double.parseDouble(listaOpciones.getFirst()));
                 System.out.print("negra ");
                     break;
-                case 'v':
+                case "v":
 
                     break;
-                case 's':
+                case "s":
                     salir=true;
                     break;
 
