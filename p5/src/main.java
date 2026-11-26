@@ -27,16 +27,23 @@ public class main {
         String opcion;
         double distancia;
         do{
-        
             System.out.print("> ");
             opcion=teclado.nextLine();
-            List <String> listaOpciones = new LinkedList<String>(Arrays.asList(opcion.split(" ")));
+            List <String> listaOpciones = new LinkedList<String>();
+            StringTokenizer st = new StringTokenizer(opcion);
+            while (st.hasMoreTokens()) {
+                listaOpciones.add(st.nextToken());
+            }
             switch (listaOpciones.getFirst()) {
                 case "c":
                     try {
                         listaOpciones.removeFirst();
-                        vuelos.CreargrafoConecto(Double.parseDouble(listaOpciones.getFirst()));
-                        System.out.print("negra ");
+                        if(!listaOpciones.isEmpty()) {
+                            vuelos.CreargrafoConecto(Double.parseDouble(listaOpciones.getFirst()));
+                            System.out.print("negra ");
+                        }else{
+                            System.out.println("ERROR: USO c <distancia>");
+                        }
                     }catch (NumberFormatException e){
                         System.out.printf("Error %s debe ser un numero\n",listaOpciones.getFirst());
                         listaOpciones.removeFirst();
