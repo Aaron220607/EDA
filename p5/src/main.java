@@ -33,9 +33,14 @@ public class main {
             List <String> listaOpciones = new LinkedList<String>(Arrays.asList(opcion.split(" ")));
             switch (listaOpciones.getFirst()) {
                 case "c":
-                    listaOpciones.removeFirst();
-                vuelos.CreargrafoConecto(Double.parseDouble(listaOpciones.getFirst()));
-                System.out.print("negra ");
+                    try {
+                        listaOpciones.removeFirst();
+                        vuelos.CreargrafoConecto(Double.parseDouble(listaOpciones.getFirst()));
+                        System.out.print("negra ");
+                    }catch (NumberFormatException e){
+                        System.out.printf("Error %s debe ser un numero\n",listaOpciones.getFirst());
+                        listaOpciones.removeFirst();
+                    }
                     break;
                 case "v":
 
