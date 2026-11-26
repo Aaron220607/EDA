@@ -92,7 +92,7 @@ public class Migracion {
                     if (distancia <= n) {
                         Tramo tramo = buscarTramo(grafoVuelos, v1, v2);
                         if (tramo == null || tramo.getProbExito()>=0.95) {
-                            Tramo nuevoTramo = new Tramo(v1.getData().getId(), v2.getData().getId(), distancia, 0.95, 0.05);
+                            Tramo nuevoTramo = new Tramo(v1.getData().getId(), v2.getData().getId(), distancia);
                             g.insertEdge(g.getVertex(v1.getID()),g.getVertex(v2.getID()),nuevoTramo);
                             
                             
@@ -105,20 +105,10 @@ public class Migracion {
     }
 
     public double calcularDistancia(Escala e1, Escala e2) {
-        double lat1 = Math.toRadians(e1.getLatitud());
-        double lon1 = Math.toRadians(e1.getLongitud());
-        double lat2 = Math.toRadians(e2.getLatitud());
-        double lon2 = Math.toRadians(e2.getLongitud());
-
-        double dlon = lon2 - lon1;
-        double dlat = lat2 - lat1;
-
-        double a = Math.pow(Math.sin(dlat / 2), 2)
-                + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dlon / 2), 2);
-        double c = 2 * Math.asin(Math.sqrt(a));
-
-
-        return c * 111.32;
+        double latm = Math.toRadians((e1.getLatitud() + e2.getLatitud()) / 2.0);
+        double dLat = e2.getLatitud() - e1.getLatitud();
+        double dLon = (e2.getLongitud() - e1.getLongitud()) * Math.cos(latm);
+        return 111.32 * Math.sqrt(dLat * dLat + dLon * dLon);
     }
 
     public Tramo buscarTramo(Graph<Escala,Tramo> grafo, Vertex<Escala> origen, Vertex<Escala> destino) {
